@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  fastapi_todo_pg:
+    image: postgres:latest
+    container_name: fastapi_todo_pg
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_ROOT: super_root
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: iBWsdXN7jsZsnCcy
+      POSTGRES_DB: codewizz_db
