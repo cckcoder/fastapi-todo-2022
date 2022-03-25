@@ -1,5 +1,16 @@
-import uvicorn
+from fastapi import FastAPI
+from models.database import engine, Base
+from routers.todo import todo_router
+
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    uvicorn.run("app.api:app", host="0.0.0.0", port=8080, reload=True)
+app.include_router(todo_router.router)
+
+
+@app.get("/")
+def root():
+    return {"message": "Hello World!"}
+
+
+Base.metadata.create_all(engine)
