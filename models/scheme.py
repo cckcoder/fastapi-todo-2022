@@ -11,6 +11,7 @@ class TodoBase(BaseModel):
 
 
 class TodoDisplay(BaseModel):
+    id: int
     text: str
     completed: bool
     date_created: datetime
