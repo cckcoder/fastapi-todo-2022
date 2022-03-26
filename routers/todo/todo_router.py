@@ -1,4 +1,3 @@
-from imp import get_frozen_object
 from fastapi import APIRouter, Depends
 from typing import List
 from sqlalchemy.orm import Session
